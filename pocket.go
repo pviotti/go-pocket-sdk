@@ -5,7 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"time"
@@ -69,7 +69,7 @@ func (c *Client) DoHTTP(ctx context.Context, endpoint string, body interface{}) 
 		return url.Values{}, errors.New(err)
 	}
 
-	respB, err := ioutil.ReadAll(resp.Body)
+	respB, err := io.ReadAll(resp.Body)
 	if err != nil {
 		return url.Values{}, errors.WithMessage(err, "failed to read request body")
 	}
