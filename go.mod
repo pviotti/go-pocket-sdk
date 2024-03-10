@@ -1,6 +1,6 @@
-module github.com/hemreari/go-pocket-sdk
+module github.com/pviotti/go-pocket-sdk
 
-go 1.17
+go 1.22
 
 require (
 	github.com/pkg/errors v0.9.1
